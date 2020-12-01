@@ -3,7 +3,7 @@ import { Button, TextField } from '@material-ui/core';
 import { Divider } from '@material-ui/core';
 import '../styles/Login.css';
 
-function LoginScreen() {
+function LoginScreen({ history }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
@@ -12,8 +12,11 @@ function LoginScreen() {
     event.preventDefault();
     if (email !== 'Kiribaty' && password !== '123456') {
       setErrorMsg('You have entered the wrong credentials');
+    } else {
+      history.push(`/welcome/${email}`);
     }
   };
+
   return (
     <div className='centered'>
       <div style={{ margin: 10 }} />

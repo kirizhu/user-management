@@ -1,14 +1,18 @@
 import React from 'react';
 import LoginScreen from './screens/LoginScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ErrorScreen from './screens/ErrorScreen';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
     <div>
       <Router>
-        <Route path={'/' || '/login'} component={LoginScreen} />
-        <Route path='/welcome' component={WelcomeScreen} />
+        <Switch>
+          <Route path={'/login'} exact component={LoginScreen} />
+          <Route path='/welcome/:name' component={WelcomeScreen} />
+          <Route component={ErrorScreen} />
+        </Switch>
       </Router>
     </div>
   );

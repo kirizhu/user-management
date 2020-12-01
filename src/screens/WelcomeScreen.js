@@ -1,9 +1,9 @@
 import React from 'react';
 
-function WelcomeScreen() {
+function WelcomeScreen({ match: { params } }) {
   return (
     <div>
-      <p>This is the welcomeScreen</p>
+      <p>Welcome to the user management page {params.name}!</p>
     </div>
   );
 }
