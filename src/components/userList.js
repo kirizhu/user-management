@@ -29,6 +29,7 @@ function UserList() {
             <th>First Name</th>
             <th>Last Name</th>
             <th>Username</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
