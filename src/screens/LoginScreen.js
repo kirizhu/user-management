@@ -10,7 +10,7 @@ function LoginScreen({ history }) {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    if (email !== 'Kiribaty' && password !== '123456') {
+    if (email !== 'admin' && password !== 'root') {
       setErrorMsg('You have entered the wrong credentials');
     } else {
       history.push(`/welcome/${email}`);
