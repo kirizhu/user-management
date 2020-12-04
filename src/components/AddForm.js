@@ -32,26 +32,22 @@ function AddForm({ match }) {
   }, []);
 
   const saveUser = async () => {
-    if (id == -1) {
-      try {
+    try {
+      if (id == -1) {
         await users.post('/users', {
           firstName,
           lastName,
           email,
         });
-      } catch (err) {
-        setErrMsg('Something went wrong');
-      }
-    } else {
-      try {
+      } else {
         await users.put(`/users/${id}`, {
           firstName,
           lastName,
           email,
         });
-      } catch (err) {
-        setErrMsg('Something went wrong');
       }
+    } catch (err) {
+      setErrMsg('Something went wrong');
     }
     history.push('/welcome');
   };
